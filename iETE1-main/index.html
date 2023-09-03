@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/ad6bffd6f3.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="navbar">
+  <a class="navbar-logo" href="#">
+    <img src="logo.png" alt="Logo">
+    IETE<p class="para">The Institution Of Electronics And Telecommunication Engineers,Chennai</p>
+  </a>
+  <ul class="navbar-links" id="nav-link">
+    <li class="navbar-link"><a href="index.html">Home</a></li>
+    <li class="navbar-link"><a href="abt1.html">About</a></li>
+    <li class="navbar-link"><a href="#executive">Executive committee</a></li>
+    <li class="navbar-link"><a href="event.html">Events</a></li>
+    <li class="navbar-link"><a href="#membership.html">Membership</a></li>
+    <li class="navbar-link"><a href="chencon2021_proceedings.pdf">Chencon</a></li>
+    <li class="navbar-link"><a href="chenlink1_3.pdf">Chenlink Newsletter</a></li>
+    <li class="navbar-link"><a href="contact.html">Contact</a></li>
+  </ul>
+    <div class="navbar-menu-icon" onclick="toggleNavbar()">
+    &#9776;
+  </div>
+ 
+</div>
+<div class="middle-section">
+  <div class="background-image"></div>
+  <div class="webinar-events">
+    <div class="webinar">
+      <h3 class="webinar-title">Upcoming Webinar</h3>
+      <p class="webinar-description"> 
+        <h2>Webinar 1: Introduction to Digital Marketing</h2>
+        <p>Date: August 15, 2023</p>
+        <p>Time: 10:00 AM - 12:00 PM</p>
+        <p>Join us for an insightful session on the basics of digital marketing.</p></p>
+      <a href="#" class="btn">Register</a>
+    </div>
+    <!-- ... More webinar events ... -->
+  </div>
+</div>
+
+<div class="about-us">
+  <div class="about-us-content">
+    <h2>Recent Events</h2>
+    <p>
+      "INNOVATION FOR THE PEOPLE AND BY THE PEOPLE IS THE REACTION OF OUR NEW INDIA"
+      - NARENDRA MODI, HON’BLE PRIME MINISTER OF INDIA.
+      Chennai Centre of IETE is committed to attain commanding heights and achieve the status of “Centre of Excellence” in Technical, Engineering & Management education by harnessing the best practices in educational innovation and through its concerted endeavors like quality teaching, industrial consultancy and training to the aspirants including corporate training.
+    </p>
+    <a href="#" class="read-more-link">Learn More</a>
+  </div>
+</div>
+<div class="cards">
+  <div class="card">
+    <img src="Slide2.jpeg" alt="Card 1">
+  </div>
+  <div class="card">
+    <img src="Slide12.jpeg" alt="Card 2">
+  </div>
+  <div class="card">
+    <img src="Slide3.jpeg" alt="Card 3">
+  </div>
+  <div class="card">
+    <img src="Slide4.jpeg" alt="Card 4">
+  </div>
+</div>
+
+
+<div class="footer">
+  <h2>IETE Chennai</h2>
+  <p>IETE Chennai centre, No: 37, Tamil Nadu 600086
+    Conran Smith Road Entrance Peters Road,
+    Gopalapuram,Chennai,</p>
+  <p>Email: ietechennai@gmail.com</p>
+  <p>Phone:  044 2835 0773</p>
+
+  <div class="subscribe-box">
+    <input type="email" class="subscribe-input" placeholder="Enter your email">
+    <button class="subscribe-btn">Subscribe</button>
+  </div>
+  <div class="copy-rights">
+    &copy; 2023 IETE. All Rights Reserved.
+  </div>
+</div>
+<script>
+  function toggleNavbar() {
+    var navbarLinks = document.querySelector(".navbar-links");
+    navbarLinks.classList.toggle("show");
+  }
+  document.querySelector(".nav-toggle").addEventListener("click", function () {
+  document.querySelector(".nav-links").classList.toggle("active");
+  document.querySelector(".nav-toggle .icon").classList.toggle("active");
+});
+
+
+
+  function scrollToAboutUs() {
+    const aboutUsSection = document.querySelector('.about-us');
+    window.scrollTo({
+      top: aboutUsSection.offsetTop,
+      behavior: 'smooth'
+    });
+  }
+
+  // Trigger automatic scroll after a delay
+  setTimeout(scrollToAboutUs, 3000); // Scr
+  // Function to check if an element is in the viewport
+  // Function to check if an element is in the viewport
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+function close(){
+  var navlinks=document.getElementById("nav-link");
+  navlinks.style.display="none";
+
+}
+
+// Function to add animation class when element is in viewport
+function animateWebinars() {
+  var webinarTitles = document.querySelectorAll(".webinar-title");
+  var webinarDescriptions = document.querySelectorAll(".webinar-description");
+
+  webinarTitles.forEach(function (title) {
+    if (isElementInViewport(title)) {
+      title.classList.add("show");
+    }
+  });
+
+  webinarDescriptions.forEach(function (description) {
+    if (isElementInViewport(description)) {
+      description.classList.add("show");
+    }
+  });
+}
+
+// Add scroll event listener to trigger animations
+window.addEventListener("scroll", animateWebinars);
+// Trigger initial animations when the page loads
+animateWebinars();
+// Function to check if an element is in the viewport
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Function to add animation class when element is in viewport
+function animateAboutUs() {
+  var aboutUsContent = document.querySelector(".about-us-content");
+
+  if (isElementInViewport(aboutUsContent)) {
+    aboutUsContent.classList.add("show");
+  }
+}
+
+// Add scroll event listener to trigger animations
+window.addEventListener("scroll", animateAboutUs);
+// Trigger initial animations when the page loads
+animateAboutUs();
+
+
+
+
+</script>
+
+</body>
+</html>
